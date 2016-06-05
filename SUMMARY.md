@@ -6,4 +6,5 @@
         * [Installing Locally](meet/gitbook-install-locally.md)
         * [Create a book](meet/gitbook-create-book.md)
         * [Intergrate with GitHub](meet/gitbook-integrate-with-github.md)
+        * [Plugin](meet/gitbook-plugin.md)
 
