@@ -22,7 +22,7 @@ sudo apt-get install nodejs nodejs-legacy npm
 --------------------------
 
 ```bash
-$ npm install gitbook-cli -g
+$ sudo npm install gitbook-cli -g
 ```
 
 `-g` 中的 'g' 代表 global, 全局安装的意思。
