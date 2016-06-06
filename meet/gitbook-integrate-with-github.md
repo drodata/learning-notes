@@ -1,14 +1,10 @@
 # Intergrate with GitHub
 
-<!-- toc -->
-
-1. 建立权限
-----------------------------
+## 建立权限
 
 在 GitBook 的设置页面内的 GitHub Panel 中，列出了 GitBook 对 GitHub 的操作权限，我们选择 "With access to public repositories"
 
-2. 在 GitBook 中新建一本书
-----------------------------
+## 在 GitBook 中新建一本书
 
 假设我们新建一本名为 "Learning Notes" 的书。
 
