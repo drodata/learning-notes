@@ -30,5 +30,5 @@
     },
     "title": "Sample GitBook",
     "variables": {},
-    "plugins": []
+    "plugins": ["anchor-navigation"]
 }
