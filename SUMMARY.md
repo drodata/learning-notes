@@ -7,6 +7,8 @@
         * [ECS Initialization](debian/ecs-init.md)
         * [Mount Separate disk on ECS](debian/ecs-mount-disk.md)
         * [Setup Git Server](debian/ecs-git-server.md)
+* [MySQL](mysql/README.md)
+    * [MySQL foreign key constraint](mysql/foreign-key-constraint.md)
 * [Meet Series](meet/README.md)
     * [Composer](meet/composer/README.md)
         * [Download and Install](meet/composer/download.md)
@@ -16,4 +18,5 @@
         * [Create a book](meet/gitbook-create-book.md)
         * [Intergrate with GitHub](meet/gitbook-integrate-with-github.md)
         * [Plugin](meet/gitbook-plugin.md)
+        * [GitBook Glossary Feature](meet/gitbook-glossary.md)
 
