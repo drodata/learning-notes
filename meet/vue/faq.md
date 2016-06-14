@@ -17,3 +17,13 @@ module.exports = {
 }
 ```
 
+## Syntax Highligting `.vue` files in Vim
+
+https://github.com/VundleVim/Vundle.vim
+
+```bash
+git clone git@github.com:VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+```
+
+> fatal: unable to access 'https://github.com/posva/vim-vue.git/': 
+> Failed to receive SOCKS4 connect request ack.             
