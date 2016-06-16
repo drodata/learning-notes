@@ -3,46 +3,10 @@ Installing Locally
 
 本文简单介绍在本地机器上（Debian 8）安装 gitbook 的步骤。
 
-1. 安装 NodeJS 和 npm
+1. 安装 NodeJS 和 NPM
 --------------------------
 
-npm 是 Node Package Manager 的简称。它是一个 Javascript 包管理器，类似 PHP 下的 Composer.
-
-Debian 自带的 `nodejs` 版本过低（`0.10.29`）,我们用下面的方式安装最新版的 NodeJS (ref. https://github.com/nodesource/distributions):
-
-```bash
-# 以 root 登录
-su root
-
-# now, the login user is root
-curl -sL https://deb.nodesource.com/setup_4.x | bash -
-apt-get install nodejs
-```
-
-### `curl` Problem
-
-上面的的 `curl` 命令有时可能会没有任何反应。
-
-```
-# curl -sL https://deb.nodesource.com/setup_4.x | bash -
-# 
-```
-
-经过验证，有可能是 `curl` package 的问题。所幸，还可以使用 `wget` 安装。执行下面命令前，先 `apt-get purge curl`, 因为，`setup_4.x` shell script 内含有尝试使用 `curl` 安装的语句。
-
-```bash
-# wget -qO- https://deb.nodesource.com/setup_4.x | bash -
-```
-
-该 `nodejs` package 已内置 `npm` package, 无需额外安装。安装完毕后，查看版本：
-
-```bash
-$ nodejs -v
-v4.4.5
-
-$ npm -v
-2.15.5
-```
+`gitbook` 本质上是一个 NPM Package, 所以先要安装 Node.js 和 NPM. 参见[安装 Node.js](/meet/nodejs/install.md).
 
 2. 使用 npm 安装 gitbook 客户端
 --------------------------
@@ -51,4 +15,4 @@ $ npm -v
 $ sudo npm install gitbook-cli -g
 ```
 
-`-g` 中的 'g' 代表 global, 全局安装的意思。
+`-g` 中的 'g' 代表 global, 全局安装的意思。加上 `sudo` 是因为我们安装 NPM 时是以 root 身份进行的。局部安装无需加 `sudo`.

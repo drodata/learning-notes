@@ -10,6 +10,8 @@
 * [MySQL](mysql/README.md)
     * [MySQL foreign key constraint](mysql/foreign-key-constraint.md)
 * [Meet Series](meet/README.md)
+    * [Node.js](meet/nodejs/README.md)
+        * [Installing](meet/nodejs/setup.md)
     * [Vue.js](meet/vue/README.md)
         * [FAQ](meet/vue/faq.md)
     * [Vux](meet/vux/README.md)
