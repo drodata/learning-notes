@@ -11,6 +11,7 @@
 * [MySQL](mysql/README.md)
     * [MySQL foreign key constraint](mysql/foreign-key-constraint.md)
 * [Meet Series](meet/README.md)
+    * [NPM](meet/npm/README.md)
     * [Node.js](meet/nodejs/README.md)
         * [Installing](meet/nodejs/install.md)
     * [Vue.js](meet/vue/README.md)
