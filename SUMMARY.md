@@ -2,6 +2,7 @@
 
 * [前言](README.md)
 * [Debian](debian/README.md)
+    * [常用命令](debian/command-cheatsheet.md)
     * [Package List](debian/package-list.md)
     * [ECS](debian/ecs.md)
         * [ECS Initialization](debian/ecs-init.md)
