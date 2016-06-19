@@ -235,6 +235,8 @@ export default {
 
 字样时，在浏览器中打开 `http://localhost:8080`, 就能看到我们的模板项目的真容了！
 
+![](http://share.drodata.com/wp-content/uploads/2016/06/vue-simple-project-welcome.png)
+
 ## 对 `webpack.config.js` 中新增两处配置的说明
 
 相比原文档中的配置，这里增加了两处内容。首先是
