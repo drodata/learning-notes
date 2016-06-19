@@ -38,21 +38,15 @@ $ npm init
 安装所有项目需要的依赖：
 
 ```bash
-npm install webpack webpack-dev-server vue-loader vue-html-loader css-loader vue-style-loader vue-hot-reload-api babel-loader babel-core babel-plugin-transform-runtime babel-preset-es2015 babel-runtime --save-dev
+npm install webpack webpack-dev-server vue-loader vue-html-loader css-loader vue-style-loader vue-hot-reload-api@^1.2.0 babel-loader babel-core babel-plugin-transform-runtime babel-preset-es2015 babel-runtime --save-dev
 npm install vue --save
 ```
 
 一共 13 个依赖！一个最简单的项目都需要这么多！对于首次接触 Vue.js 和 Webpack 的人来说，到这里往往会被吓到。正如原文档中所说，这里的每一个 package 都是必须的。随着学习的深入，我们会发现每一个 package 的作用也很容易理解。
 
-上面的两行命令，安装过程中有可能会出现下面的错误提示（我在运行时就遇到了）：
-
-> error code `EPEERINVALID`
->
-> error peerinvalid 
->
-> The package vue-hot-reload-api@2.0.1 does not satisfy its siblings' peerDependencies requirements! vue-loader@8.5.2 **wants vue-hot-reload-api@^1.2.0**
-
-解决方法我也总结了，看[这里](/meet/npm/error.md)。
+> 关于 `vue-hot-reload-api` package 的说明
+> 
+> 上面的 13 个依赖中，`vue-hot-reload-api` 有些特别，它后面带有表示版本的 `@^1.2.0` 后缀。这是因为最新的 `vue-loader` `8.5.2` 仅支持 `1.x` 的 `vue-hot-reload-api`, 而 `vue-hot-reload-api` 已经到了 `2.x`, 如果不指定版本，npm 默认会安装最新版的 packages. 这将导致出现 ["EPEERINVALID" 错误](/meet/npm/error.md)。
 
 安装好了，我们的 `package.json` 文件中会多出如下内容：
 
