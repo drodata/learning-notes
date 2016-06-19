@@ -5,9 +5,10 @@
 ### `EPEERINVALID`
 
 > error code `EPEERINVALID`
+>
 > error peerinvalid 
-> The package vue-hot-reload-api@2.0.1 does not satisfy its siblings' peerDependencies requirements!
-> Peer vue-loader@8.5.2 **wants vue-hot-reload-api@^1.2.0**
+>
+> The package vue-hot-reload-api@2.0.1 does not satisfy its siblings' peerDependencies requirements! vue-loader@8.5.2 **wants vue-hot-reload-api@^1.2.0**
 
 简单说，就是 `vue-loader@8.5.2` package 要求 `vue-hot-reload-api` 的版本号是 `^1.2.0`, 而准备安装的版本号是 `2.0.1`.
 
