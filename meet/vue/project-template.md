@@ -27,7 +27,7 @@
 
 我们新建一个目录，作为项目的根目录，名字任意取，例如，可以叫 `vue-simple-project`.
 
-在该目录下使用 `num init` 新建一个 `package.json` 文件。
+在该目录下使用 `npm init` 新建一个 `package.json` 文件。
 
 ```bash
 $ cd vue-simple-project
@@ -54,7 +54,7 @@ npm install vue --save
 
 解决方法我也总结了，看[这里](/meet/npm/error.md)。
 
-安装好了，我们的 `package.json` 文件中对多出如下内容：
+安装好了，我们的 `package.json` 文件中会多出如下内容：
 
 ```
   "devDependencies": {
@@ -257,7 +257,7 @@ export default {
 
 > Uncaught SyntaxError: Unexpected reserved word
 
-简单说下原因：JS 模块的加载有多种方式，默认的是 CommonJS, 现在流行的是 ES2015 (即 ES6)。前者引入模块使用的是 `require` 关键字，后者使用的是 `import`. 由于我们接下来添加的 `main.js` 中使用的就是 ES6 语法，因此，必须在 `webpack.config.js` 中指明使用 ES6 去解析我们的 JS 文件，而不使用默认的 CommonJS 方式。
+简单说下原因：JS 模块的加载有多种方式，默认的是 CommonJS, 现在流行的是 ES2015 (即 ES6)。前者引入模块使用的是 `require` 关键字，后者使用的是 `import`. 由于我们在 `main.js` 中使用的就是 ES6 语法，因此，必须在 `webpack.config.js` 中指明使用 ES6 去解析我们的 JS 文件，而不使用默认的 CommonJS 方式。
 
 第 2 处新增内容是：
 
@@ -272,9 +272,8 @@ export default {
 > ERROR in `./main.js`
 >
 > Module not found: Error: Cannot resolve 'file' or 'directory' `./components/App` in ...
- @ ./main.js 7:11-38
 
-出错代码如下：
+对应的出错代码行：
 
 ```js
 // main.js
