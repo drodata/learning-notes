@@ -149,7 +149,7 @@ new Vue({
 
 内容如下：
 
-```
+```vue
 <template>
   <div class="app">
     <app-header></app-header>
@@ -177,7 +177,7 @@ export default {
 
 内容如下：
 
-```
+```vue
 <template>
   <div class="header">
     <h1>{{message}}</h1>
@@ -199,7 +199,7 @@ export default {
 
 内容如下：
 
-```
+```vue
 <template>
   <div class="content">
     <p>I am the main conent.</p>
@@ -211,7 +211,7 @@ export default {
 
 内容如下：
 
-```
+```vue
 <template>
   <div class="footer">
     <p>I am the footer.</p>

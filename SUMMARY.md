@@ -8,6 +8,7 @@
         * [ECS Initialization](debian/ecs-init.md)
         * [Mount Separate disk on ECS](debian/ecs-mount-disk.md)
         * [Setup Git Server](debian/ecs-git-server.md)
+* [git && GitHub](git/README.md)
 * [MySQL](mysql/README.md)
     * [MySQL foreign key constraint](mysql/foreign-key-constraint.md)
 * [Meet Series](meet/README.md)
