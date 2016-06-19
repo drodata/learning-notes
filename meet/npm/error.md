@@ -19,9 +19,7 @@ npm install vue-loader vue-hot-reload-api@^1.2.0
 
 换句话说，使用 `npm install <package>` 安装 package 时，`<pcakage>` 后面可以指定版本号，格式是: `@<version-number>`.
 
----------------
-#### question
-最后安装的实际版本号却是 `^1.3.2`, Why?
+最后安装的实际版本号是 `^1.3.2`: 
 
 ```
   "devDependencies": {
@@ -31,4 +29,4 @@ npm install vue-loader vue-hot-reload-api@^1.2.0
   },
 ```
 
----------------
+这是因为我们在版本号前面使用了 Caret range `^` 的原因。关于 `^` 的含义参见 [NPM Semver](/meet/npm/node-semver.md) 相关基础。
