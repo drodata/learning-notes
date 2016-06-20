@@ -28,6 +28,8 @@
             * [router view](meet/vue/router/view.md)
             * [v-link](meet/vue/router/v-link.md)
             * [Lazy loading Routes](meet/vue/router/lazy.md)
+            * [API Reference](meet/vue/router/api/README.md)
+                * [router.go](meet/vue/router/api/go.md)
     * [Vux](meet/vux/README.md)
         * [FAQ](meet/vux/faq.md)
     * [Composer](meet/composer/README.md)
