@@ -1,6 +1,6 @@
 # Named Routes 具名路由
 
-为一个路由命名在导航时特别有用。
+那些含有 dynamic segment 或 star segment 的路由最适合设置成具名路由,  为它赋予一个名称，可以很方便地创建链接。
 
 ## 如何命名
 

@@ -1,4 +1,34 @@
-Vur-Router
+Vue.js
+===========================
+
+## directive
+
+指令符。以 `v-` 开头的一类特殊的属性。例如 `<a v-link="/"></a>` 中的 `v-link`.
+
+作用： _to reactively apply special behavior to the DOM when the value of its expression changes_
+
+各种工具下的指令符举例：
+
+- MySQL: 在 option file 内，可以使用 `!include` 指令符来包含其它 option files;
+- PHP: `php.ini` 中的各种设置都叫指令符，例如 `error_reporting`;
+
+See also: directive modifier
+
+## directive argument
+
+指令符参数。紧跟指令符，以 `:` 开头，比如 `v-bind:href="url"` 中的 `:href`.
+
+你可能注意到，`v-bind:href="url"` 等价于 `href="{{url}}"`. 实际上，在内部，所有 attribute interpolation 都会转化成 `v-bind`.
+
+## directive modifier
+
+修饰符。以 `.` 开头的特殊后缀。表示指令符绑定的方式。例如，修饰符 `.literal` 靠素指令符以 literal string 而不是表达式来解析它的属性值：
+
+```vue
+<a v-bind:href.literal="/a/b/c"></a>
+```
+
+Vue-Router
 ===========================
 
 ## Dynamic Segments
@@ -34,6 +64,13 @@ Route context object 的简称。
 <p>Current route path: {{$route.path}}</p>
 <p>Current route params: {{$route.params | json}}</p>
 ```
+
+## named route
+
+具名路由。
+
+相关章节：[Named Routes](/meet/vue/router/named-route.md)
+
 
 MySQL
 ===========================
