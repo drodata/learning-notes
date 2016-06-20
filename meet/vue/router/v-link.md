@@ -36,7 +36,7 @@ TBD
 
 假设一个元素的 `v-link` 值为 `/a`, 那么，只要，路径以 `/a` 开头（`/a/b`, `a/goo` 等），active class 都会应用到该元素上。
 
-我们自然回想，如何能实现精确匹配？ 答案是使用 `v-link` 的 `exact` inline option:
+我们自然会想，如何能实现精确匹配？ 答案是使用 `v-link` 的 `exact` inline option:
 
 ```vue
 <a v-link="{path: '/a', exact: true}">A</a>
