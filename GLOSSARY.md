@@ -28,6 +28,12 @@ See also: directive modifier
 <a v-bind:href.literal="/a/b/c"></a>
 ```
 
+## Async Components
+
+异步组件。
+
+Ref. http://vuejs.org/guide/components.html#Async-Components
+
 Vue-Router
 ===========================
 
