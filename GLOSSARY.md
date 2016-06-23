@@ -77,6 +77,22 @@ Route context object 的简称。
 
 相关章节：[Named Routes](/meet/vue/router/named-route.md)
 
+## hash mode
+
+如果 url 中含有 `#!` (hashbang), 即为 hash mode. 例如： `http://a.com/#!/user`.
+
+See also: history mode.
+
+## history mode
+
+url 中不带 hashbang `#!`, 想普通的 URL 那样。
+
+## hashbang
+
+即 url 中的 `#!` 符号。
+
+hash 表示井号， bang 表示感叹号。
+
 
 MySQL
 ===========================
