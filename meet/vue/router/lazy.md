@@ -18,7 +18,23 @@ router.map({
 }
 ```
 
-随着路由个数的增加， entry script 顶部就会出现一长串 `import` 语句。Vue.js 提供了一种动态加载组件的特性—— Async components. 也就是说，仅当路由 `/demo` 需要被显示时， `Demo` 组件才会异步加载进来。
+随着路由个数的增加， entry script 顶部就会出现一长串 `import` 语句。
+
+> 还有另一种写法：
+> 
+> ```js
+> // entry script
+> 
+> router.map({
+>   '/demo': {
+>     component: require( './components/Demo')
+>   }
+> }
+> ```
+> 
+> from [Vue-route advanced example](https://github.com/vuejs/vue-router/blob/dev/example/advanced/route-config.js) 
+
+Vue.js 提供了一种动态加载组件的特性—— Async components. 也就是说，仅当路由 `/demo` 需要被显示时， `Demo` 组件才会异步加载进来。
 
 使用惰性加载的方式加载 `Demo` 组件的代码如下：
 
