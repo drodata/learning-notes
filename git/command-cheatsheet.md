@@ -10,6 +10,7 @@
 列表    | `git tag` | 列出 resposity 中所有tag
         | `git tag -l 'v0.2.2*`| 筛选出以`v0.2.2`开头的标签. `-l` 后面跟正则 `<pattern>`
         | `git show v0.2.2` | 查看某个标签的 Commit 信息
+Checkout| `git checkout -b version2 v0.2.2` | checkout a specific tag
 Push    | `git push origin v0.2.2` | 分享一个标签至远端
         | `git push origin --tags` | 一次性分享多个标签至远端
 删除    | `git tag -d 0.4.1` | 删除标签 0.4.1
