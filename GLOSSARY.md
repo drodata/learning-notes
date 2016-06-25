@@ -149,3 +149,35 @@ The consequences of deleting, or updating rows in the parent table depend on the
 - 子表中含有 `FOREIGN KEY ... REFERENCES` 从句；
 - 子表记录创建的前提是，父表对应的记录必须存在；
 - 通过设置 `ON UPDATE` 和 `ON DELETE` options, 子表可以对父表的更新、删除操作进行不同的回应，例如跟随更新或删除、拒绝等；
+
+Misc
+===========================
+
+## 语法糖
+
+Syntactic Sugar. 简单来说，就是一种便捷写法。
+
+学习 Promise 时首次遇到此概念。举个自己实际遇到的例子：
+
+```js
+timeout(3000).then((value) => {
+  console.log(value);
+});
+```
+
+注意 `then()` 函数的参数的写法。上面的函数更熟悉的写法是：
+
+```js
+timeout(3000).then(function (value) {
+  console.log(value);
+});
+```
+
+对比后会发现：
+
+- 省略了 `function`;
+- 在 `(value)` 和 `{` 间加上 `=>`;
+
+Ref.
+
+- zhihu 回答：https://www.zhihu.com/question/20651624
