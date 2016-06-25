@@ -22,10 +22,43 @@ See also: directive modifier
 
 ## directive modifier
 
-修饰符。以 `.` 开头的特殊后缀。表示指令符绑定的方式。例如，修饰符 `.literal` 靠素指令符以 literal string 而不是表达式来解析它的属性值：
+指令修饰符。以 `.` 开头的特殊后缀。例子： `v-on:submit.prevent="onSubmit"`
+
+表示指令符绑定的方式。例如，`v-on` 指令 提供了 `.prevent` 和 `.stop` 两个事件修饰符，对应 event handlers 内的 `event.preventDefault()` 和 `event.stopPropagation()` 两个原生方法。我们当然可以在 handlers 内使用原生的方法，例如：
 
 ```vue
-<a v-bind:href.literal="/a/b/c"></a>
+<template>
+  <form v-on:submit="onSubmit"></form>
+</template>
+
+<script>
+export default {
+  methods: {
+    onSubmit: function (event) {
+      event.preventDefault()
+      //...
+    }
+  }
+}
+</script>
+```
+
+但是下面的写法让我的 handlers 是纯粹的数据逻辑，不掺杂处理 DOM 事件：
+
+```vue
+<template>
+  <form v-on:submit.prevent="onSubmit"></form>
+</template>
+
+<script>
+export default {
+  methods: {
+    onSubmit: function (event) {
+      // 数据逻辑代码
+    }
+  }
+}
+</script>
 ```
 
 ## Async Components
