@@ -5,7 +5,9 @@ Vue.js
 
 指令符。以 `v-` 开头的一类特殊的属性。例如 `<a v-link="/"></a>` 中的 `v-link`.
 
-作用： _to reactively apply special behavior to the DOM when the value of its expression changes_
+指令的值必须是绑定表达式。
+
+作用： 打绑定表达式的值改变时，把某些特殊的行为应用到 DOM 上。 _to reactively apply special behavior to the DOM when the value of its expression changes_
 
 各种工具下的指令符举例：
 
@@ -14,15 +16,15 @@ Vue.js
 
 See also: directive modifier
 
-## directive argument
+## 指令参数
 
-指令符参数。紧跟指令符，以 `:` 开头，比如 `v-bind:href="url"` 中的 `:href`.
+directive argument 紧跟指令符，以 `:` 开头，比如 `v-bind:href="url"` 中的 `:href`.
 
 你可能注意到，`v-bind:href="url"` 等价于 `href="{{url}}"`. 实际上，在内部，所有 attribute interpolation 都会转化成 `v-bind`.
 
-## directive modifier
+## 指令修饰符
 
-指令修饰符。以 `.` 开头的特殊后缀。例子： `v-on:submit.prevent="onSubmit"`
+directive modifiers。以 `.` 开头的特殊后缀。例子： `v-on:submit.prevent="onSubmit"`
 
 表示指令符绑定的方式。例如，`v-on` 指令 提供了 `.prevent` 和 `.stop` 两个事件修饰符，对应 event handlers 内的 `event.preventDefault()` 和 `event.stopPropagation()` 两个原生方法。我们当然可以在 handlers 内使用原生的方法，例如：
 
