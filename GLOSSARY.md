@@ -63,6 +63,27 @@ export default {
 </script>
 ```
 
+## 代理属性
+
+proxied properties. 每个 Vue 实例都会代理其 `data` 对象里所有的属性
+
+例如：
+
+```js
+var data = { a: 1 }
+var vm = new Vue({
+  data: data
+})
+```
+
+那么， `vm.a` 就是代理属性，代理的是 `data.a`.
+
+代理属性是可响应的。所谓“可响应”是指，更新代理属性的值将同时更新 `data` 对应属性的值，反之亦然。
+
+## 实例属性
+
+与代理属性不同，实例属性的名称都有一个 `$` 前缀。例如 `$data`, `$el`.
+
 ## Async Components
 
 异步组件。

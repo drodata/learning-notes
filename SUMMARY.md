@@ -22,6 +22,7 @@
         * [Installing](meet/nodejs/install.md)
     * [Vue.js](meet/vue/README.md)
         * [FAQ](meet/vue/faq.md)
+        * [Vue 实例](meet/vue/instance.md)
         * [数据绑定语法](meet/vue/syntax.md)
         * [一个简单的模板项目](meet/vue/project-template.md)
         * [Vue-router](meet/vue/router/README.md)
