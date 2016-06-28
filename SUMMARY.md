@@ -24,6 +24,7 @@
         * [FAQ](meet/vue/faq.md)
         * [Vue 实例](meet/vue/instance.md)
         * [数据绑定语法](meet/vue/syntax.md)
+        * [计算属性](meet/vue/computed-properties.md)
         * [一个简单的模板项目](meet/vue/project-template.md)
         * [Vue-router](meet/vue/router/README.md)
             * [Basic Usage](meet/vue/router/basic.md)

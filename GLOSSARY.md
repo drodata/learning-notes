@@ -63,9 +63,9 @@ export default {
 </script>
 ```
 
-## 代理属性
+## Proxied Properties
 
-proxied properties. 每个 Vue 实例都会代理其 `data` 对象里所有的属性
+代理属性. 每个 Vue 实例都会代理其 `data` 对象里所有的属性
 
 例如：
 
@@ -83,6 +83,7 @@ var vm = new Vue({
 ## 实例属性
 
 与代理属性不同，实例属性的名称都有一个 `$` 前缀。例如 `$data`, `$el`.
+
 
 ## Async Components
 
