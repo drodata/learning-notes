@@ -11,6 +11,7 @@
 * [git && GitHub](git/README.md)
     * [Commands Cheat-sheet](git/command-cheatsheet.md)
 * [MySQL](mysql/README.md)
+    * [FAQs](mysql/faqs.md)
     * [MySQL foreign key constraint](mysql/foreign-key-constraint.md)
 * [ES6](es6/README.md)
     * [Promise](es6/promise.md)
