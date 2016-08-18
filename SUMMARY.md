@@ -49,6 +49,7 @@
     * [Vux](meet/vux/README.md)
         * [FAQ](meet/vux/faq.md)
     * [Composer](meet/composer/README.md)
+        * [FAQs](meet/composer/faqs.md)
         * [Download and Install](meet/composer/download.md)
         * [Errors and Workaround](meet/composer/errors-and-workaround.md)
     * [GitBook](meet/gitbook.md)
