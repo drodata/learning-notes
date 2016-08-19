@@ -10,6 +10,8 @@
         * [Setup Git Server](debian/ecs-git-server.md)
 * [git && GitHub](git/README.md)
     * [Commands Cheat-sheet](git/command-cheatsheet.md)
+* [PHP](php/README.md)
+    * [Funtions Cheat-sheet](php/functions-cheat-sheet.md)
 * [MySQL](mysql/README.md)
     * [FAQs](mysql/faqs.md)
     * [MySQL foreign key constraint](mysql/foreign-key-constraint.md)
