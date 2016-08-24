@@ -10,6 +10,8 @@
         * [Setup Git Server](debian/ecs-git-server.md)
 * [git && GitHub](git/README.md)
     * [Commands Cheat-sheet](git/command-cheatsheet.md)
+* [Yii](yii/README.md)
+    * [ActiveRecord](yii/activerecord.md)
 * [PHP](php/README.md)
     * [Funtions Cheat-sheet](php/functions-cheat-sheet.md)
 * [MySQL](mysql/README.md)
