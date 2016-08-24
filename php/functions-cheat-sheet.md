@@ -23,3 +23,18 @@
   ];
   echo http_build_query($data); // 'name=jim&age=20&sex=male'
   ```
+
+## Filesystem Functions
+
+* `pathinfo()`: 返回一个文件的路径信息
+
+```php
+$path_parts = pathinfo('/tmp/road.jpg');
+
+echo $path_parts['dirname']; // '/tmp' 注意，后面没有斜杠
+echo $path_parts['basename']; // 'road.jpg'
+echo $path_parts['extension']; // 'jpg'
+echo $path_parts['filename']; // 'road'
+```
+
+图片处理时，经常需要用该函数来获取图片的后缀命。
