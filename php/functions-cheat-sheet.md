@@ -24,7 +24,26 @@
   echo http_build_query($data); // 'name=jim&age=20&sex=male'
   ```
 
-## Filesystem Functions
+
+Number Functions
+============================
+
+- `abs()` 数字的绝对值
+    
+  ```php
+  echo abs(-4.2); // 4.2
+  ```
+
+  **注意**: 该函数的值不可能是负数。比较两个浮点数是否相等用的就是该函数。
+    
+  ```php
+  echo abs(($balance - $charge) / $charge) < 0.0001 ? 'equal' : 'not equal';
+  ```
+
+
+  
+Filesystem Functions
+============================
 
 * `pathinfo()`: 返回一个文件的路径信息
 
