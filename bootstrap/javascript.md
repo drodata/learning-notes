@@ -1,5 +1,63 @@
 # Modal
 
+## Options
+
+- `backdrop`: boolean or `static`, 默认值：`true`. 是否显示阴影效果。`static` 表示当用户点击阴影时**不关闭** Modal.
+- `keyboard`: boolean, 默认值：`true`. 是否支持 Esc 关闭 modal;
+- `show`: boolean, 默认值：`true`. Modal 初始化完毕后是否立即显示;
+
+## Basic Example
+
+```php
+<?php Modal::begin([
+    'id' => 'order-view-modal',
+    'header' => Html::tag('h3', 'Hello World'),
+    'footer' => Html::button('取消', [
+        'class' => 'btn btn-default',
+        'data-dismiss' => 'modal',
+    ]),
+    'clientOptions' => [
+        'keyboard' => false,
+        'backdrop': 'static',
+    ],
+    'size' => Modal::SIZE_LARGE,
+]); ?>
+```
+
+## Properties
+
+- `size`: `Modal::SIZE_LARGE`, `Modal::SIZE_SMALL` or empty for default.
+- **`clientOptions`**
+  
+  :warning: 如果 Modal widget 通过 AJAX 的方式显示，`clientOptions` 内的设置**会失效**。因此，不要在这种情况下声明 `clientOptions` property, 而是通过 JavaScript 来实现，例如：
+
+  ```js
+  $('#customer-quick-cu-modal').modal({
+      'keyboard': false,
+      'backdrop': 'static',
+  });
+  ```
+  
+## Enable Overlay ( Nested Modal )
+
+Modal 嵌套很常用，但官方默认不支持。下面是解决方法（仅需设置一次）：
+
+```js
+$(document).on('show.bs.modal', '.modal', function () {
+    var zIndex = 1040 + (10 * $('.modal:visible').length);
+    $(this).css('z-index', zIndex);
+    setTimeout(function() {
+        $('.modal-backdrop').not('.modal-stack').css('z-index', zIndex - 1).addClass('modal-stack');
+    }, 0);
+});
+```
+
+## Reference
+
+- [Yii2 Modal API](http://www.yiiframework.com/doc-2.0/yii-bootstrap-modal.html)
+- [Modal Options](http://getbootstrap.com/javascript/#modals-options)
+- [Modal Ovelay on Stackoverflow](http://stackoverflow.com/questions/19305821/multiple-modals-overlay)
+
 # Tabs
 
 在 Yii2 内使用 Tabs 很简单，主要就是配置一个 items 数组：
