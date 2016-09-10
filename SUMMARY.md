@@ -13,6 +13,7 @@
 * [Yii](yii/README.md)
     * [FAQs](yii/faqs.md)
     * [ActiveRecord](yii/activerecord.md)
+    * [Migation](yii/migration.md)
 * [PHP](php/README.md)
     * [FAQs](php/faqs.md)
     * [Funtions Cheat-sheet](php/functions-cheat-sheet.md)
