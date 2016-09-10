@@ -1,5 +1,21 @@
 # Funtions Cheat-sheet
 
+Array Functions
+============================
+
+### Array Sorting
+
+
+Name | Sorts by | Maintains key association | Desc.
+-----|----------|---------------------------|--------------
+asort(), arsort() | value | yes | `['Customer A' => 600.50, 'Customer B' => 700.3]` 按销售排序客户数组
+ksort(), krsort() | key | yes | `['Customer A' => 600.50, 'Customer B' => 700.3]` 按**客户名称** 排序客户数组
+sort(), rsort() | value | no | 适合排序非关系数组
+
+
+String Functions
+============================
+
 * `mb_substr`: 截取中文字符串
 
   ```php

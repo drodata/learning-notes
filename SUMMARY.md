@@ -19,6 +19,8 @@
 * [jQuery](jquery/README.md)
     * [Funtions Cheat-sheet](jquery/functions-cheat-sheet.md)
     * [FAQs](jquery/faqs.md)
+* [Twitter Bootstrap](bootstrap/README.md)
+    * [Popover](bootstrap/popover.md)
 * [MySQL](mysql/README.md)
     * [FAQs](mysql/faqs.md)
     * [MySQL foreign key constraint](mysql/foreign-key-constraint.md)
