@@ -1,10 +1,13 @@
 # Migration
 
-FAQs and Howtos
-=================
+## 常用方法
 
-在 up() 内使用 `Yii` 时的注意事项
---------------------------------
+- `integer()`: 如果不指明 length, 对 MySQL 来说，默认长度为 `11`;
+- `unsigned()`: 无符号。注意，没有 `signed()`, 默认就区分正负；
+
+## FAQs and Howtos
+
+### 在 up() 内使用 `Yii` 时的注意事项
 
 Migrations 不属于任何命名空间。在文件顶部不必 `use` 其它类，直接使用 full qualified class names 即可。在下面的例子中，我们需要在 migration 时新增一个角色，所以需要使用 `Yii::$app->authManager`, 此时，**不要在顶部 `use Yii`**, 直接使用即可：
 
