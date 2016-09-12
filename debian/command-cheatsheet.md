@@ -1,5 +1,9 @@
 # 常用命令
 
+## Glance
+
+- 查看一个目录的容量：`du -sh ./ftpupload`
+
 ## `tree`
 
 list contents of directories in a tree-like format.
