@@ -13,6 +13,7 @@
 * [Yii](yii/README.md)
     * [FAQs](yii/faqs.md)
     * [ActiveRecord](yii/activerecord.md)
+    * [GridView](yii/gridview.md)
     * [Migation](yii/migration.md)
 * [PHP](php/README.md)
     * [FAQs](php/faqs.md)
