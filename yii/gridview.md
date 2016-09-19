@@ -1,6 +1,6 @@
 # GridView
 
-- [DataColumn](yii/gridview-actioncolumn.md)
+- [DataColumn](gridview-actioncolumn.md)
 
 ## Options
 
