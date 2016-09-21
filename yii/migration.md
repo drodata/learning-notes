@@ -1,9 +1,19 @@
 # Migration
 
+- http://www.yiiframework.com/doc-2.0/yii-db-migration.html
+
 ## 常用方法
 
 - `integer()`: 如果不指明 length, 对 MySQL 来说，默认长度为 `11`;
 - `unsigned()`: 无符号。注意，没有 `signed()`, 默认就区分正负；
+
+Methods in `yii\db\ColumnSchemaBuilder`
+
+- `after()`: 指定新增列的位置，例如：
+  
+  ```php
+  $this->addColumn('order', 'weight', $this->decimal(4,2)->notNull()->after('status'));
+  ```
 
 ## FAQs and Howtos
 
