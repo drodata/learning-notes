@@ -1,7 +1,18 @@
 # Funtions Cheat-sheet
 
 
-## Utilities
+## JavaScript Native Functions
+
+- `parseInt()`, `parseFloat()`:
+- `Math.round()`
+- `.toFixed(number)`: 将一个浮点数只保留小数点后 `number` 位，例子：
+  
+  ```js
+  var amt = parseFloat( $('#quantity').html() );
+  amt.toFixed(2);
+  ```
+
+## jQuery Utilities
 
 ### `$.now()`: 返回当前 timestamp
   
