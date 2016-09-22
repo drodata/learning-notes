@@ -2,6 +2,8 @@
 
 ## Download
 
+参考链接：https://getcomposer.org/download/
+
 之前从未安装过，从 https://github.com/composer/composer/releases 下载最新版，下载的文件为 `composer.phar`.
 
 为了在任何地方都能执行该命令，我们执行 
