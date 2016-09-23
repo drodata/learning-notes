@@ -1,5 +1,52 @@
 # PHP FAQs
 
+## 如何使用 `&&` 或 `||` 操作符实现短路写法
+
+
+### 例一
+
+假设一个产品有多张产品图片，在做产品导入时，需要判断一张图片是否已经在系统中存在，若存在，则不再重复上传。这个逻辑怎么写比较好呢？
+
+方法一：借助 `in_array()` 来判断：
+
+```php
+$hashes = [];
+foreach ($this->images as $image) {
+    $hashes[] = md5_file($image->path);
+}
+return !in_array(md5_file($imagePath), $hashes);
+```
+
+方法二：使用 `&&` 操作符
+
+```php
+$status = true;
+foreach ($this->images as $image) {
+    $status = (md5_file($image->path) != md5_file($imagePath)) && $status;
+}
+return $status;
+```
+
+显然，后者更简洁些。
+
+### 例二
+
+假设有个产品表，许多其它表（订单表、库存表等）都将产品表 ID 作为外键。在删除一条产品表记录时，我们需要先逐一检查在其它表中，是否存在包含该记录的外键约束，是则不能直接删除。借助 `||` 操作符，这个判断的方法可以这么写：
+
+```php
+public function hasConstraint()
+{
+    $flag = false;
+    $modelNames = ['Stock', 'Item', 'InventoryItem', 'PurchaseItem'];
+    foreach ($modelNames as $modelName) {
+        $modelName = "\\backend\\models\\" . $modelName;
+        $record = $modelName::findOne(['product_id' => $this->id]);
+        $flag = !is_null($record) || $flag; // 关键
+    }
+    return $flag;
+}
+```
+
 `static` V.S. `self`
 -------------------------------
 
