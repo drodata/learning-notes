@@ -6,6 +6,13 @@
 
 - `integer()`: 如果不指明 length, 对 MySQL 来说，默认长度为 `11`;
 - `unsigned()`: 无符号。注意，没有 `signed()`, 默认就区分正负；
+  
+  在设计数据库表格时，要**为可扩展性留有余地，不要轻易使用 unsigned integer / decimal**. 例如，假设 `price`, `quantity` 和 `charge` 分别表示一个订单订货的金额、数量和金额，`quantity` 和 `charge` 就不适合使用 unsigned 限制，因为如果将来订单表牵涉到退货环节，数量和金额都会是负数；相反，单价列无论合适都不会是负数，可以使用 unsigned 限制。
+- `addPrimaryKey()` 添加主键
+  
+  ```php
+  $this->addPrimaryKey('product2group', 'price', ['product_id', 'group']);
+  ```
 
 Methods in `yii\db\ColumnSchemaBuilder`
 
