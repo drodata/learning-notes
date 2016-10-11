@@ -15,6 +15,7 @@
     * [ActiveRecord](yii/activerecord.md)
     * [GridView](yii/gridview.md)
     * [Migation](yii/migration.md)
+    * [Helpers](yii/helpers.md)
     * [Essays](yii/essays/README.md)
         * [Declaring Relations via a Junction Table](yii/essays/declaring-relations-via-a-junction-table.md)
 * [PHP](php/README.md)
