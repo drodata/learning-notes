@@ -2,6 +2,8 @@
 
 npm 是 Node Package Manager 的简称。它是一个 Javascript 包管理器，类似 PHP 下的 Composer.
 
+## Installing on Debian
+
 Debian 自带的 `nodejs` 版本过低（`0.10.29`）,我们用下面的方式安装最新版的 NodeJS (ref. https://github.com/nodesource/distributions):
 
 ```bash
@@ -36,4 +38,12 @@ v4.4.5
 
 $ npm -v
 2.15.5
+```
+
+## Installing on Mac
+
+Mac 下，仅需下面一条命令即可安装 Node.js 和 NPM:
+
+```bash
+$ brew install node
 ```
