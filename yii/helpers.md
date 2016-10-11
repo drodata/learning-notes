@@ -25,9 +25,8 @@ public static array map ( $array, $from, $to, $group = null )
 ```php
 ArrayHelper::map(
     User::find()->where(['status' => 1])->asArray()->all(),
-        'id',
-            'username',
-                'group_id'
-                );
-                ```
-
+    'id',
+    'username',
+    'group_id'
+);
+```
