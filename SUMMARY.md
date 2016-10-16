@@ -27,6 +27,8 @@
     * [FAQs](jquery/faqs.md)
     * [Errors List](jquery/error.md)
 * [Twitter Bootstrap](bootstrap/README.md)
+    * [CSS](bootstrap/css.md)
+    * [Components](bootstrap/component.md)
     * [Javascript](bootstrap/javascript.md)
 * [MySQL](mysql/README.md)
     * [FAQs](mysql/faqs.md)

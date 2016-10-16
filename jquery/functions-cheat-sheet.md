@@ -1,8 +1,16 @@
 # Funtions Cheat-sheet
 
+JavaScript Native Functions
+--------------------------------
 
-## JavaScript Native Functions
+- `window.location.href`: 页面跳转
+  ```js
+  // set
+  window.location.href = 'http://a.com'
 
+  //get
+  var currentHref = window.location.href 
+  ```
 - `parseInt()`, `parseFloat()`:
 - `Math.round()`
 - `isNaN()`: 判断一个变量值是否是 `NaN`;
