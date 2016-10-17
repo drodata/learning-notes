@@ -105,3 +105,22 @@ echo $path_parts['filename']; // 'road'
 ```
 
 图片处理时，经常需要用该函数来获取图片的后缀命。
+
+Misc
+============================
+
+- `call_user_func()`: 调用用户自定义函数
+  
+  Signature:
+
+  ```php
+  mixed call_user_func ( callable $callback [, mixed $parameter [, mixed $... ]] )
+  ```
+
+  Example:
+
+  ```php
+  function hello($name, $age) { echo "Hello $name, I am $age";}
+
+  call_user_func('hello', 'drodata', 3); // 'Hello drodata, I am 3'
+  ```
