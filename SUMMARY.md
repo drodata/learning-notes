@@ -13,6 +13,7 @@
 * [Yii](yii/README.md)
     * [FAQs](yii/faqs.md)
     * [ActiveRecord](yii/activerecord.md)
+    * [Validators](yii/validator.md)
     * [GridView](yii/gridview.md)
     * [Migation](yii/migration.md)
     * [Helpers](yii/helpers.md)
