@@ -1,9 +1,8 @@
 # Funtions Cheat-sheet
 
-
 ## JavaScript Native Functions
 
-- `parseInt()`, `parseFloat()`:
+- `parseInt()`, `parseFloat()`: 例如: `parseInt('1')`
 - `Math.round()`
 - `isNaN()`: 判断一个变量值是否是 `NaN`;
 - `.toFixed(number)`: 将一个浮点数只保留小数点后 `number` 位，例子：
