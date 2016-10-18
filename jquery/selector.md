@@ -2,6 +2,8 @@
 
 - http://api.jquery.com/category/selectors/
 
+## `parents('tr').first()`: 查找距离当前元素最近的某个元素
+
 ## Attribute Equals Selector [name=”value”]
 
 - `attribute`: An attribute name.
