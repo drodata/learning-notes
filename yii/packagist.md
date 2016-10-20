@@ -15,10 +15,25 @@
     - User: `drodata`
     - Token: 在 Packagist Profile 页可找到
     - Domain: `https://packagist.org/`
-5. 使用
-   
-   ```bash
-   composer create-project --prefer-dist --stability=dev drodata/yii2-app-template my-next-project
-   ```
 
-   相比使用 git clone 命令，`composer create-project` 不但会下载 package 本身，**还会将 package 所依赖的所有 packages 一并下载**, 作用相当于 `git clone` + `composer install`
+###5. 使用
+   
+```bash
+composer create-project --prefer-dist --stability=dev drodata/yii2-app-template my-next-project
+```
+
+相比使用 git clone 命令，`composer create-project` 不但会下载 package 本身，**还会将 package 所依赖的所有 packages 一并下载**, 作用相当于 `git clone` + `composer install`
+
+而且，由于我们在 `composer.json` 中配置有如下信息：
+
+```json
+{
+    "scripts": {
+        "post-install-cmd": "php init --env=Development --overwrite=n"
+    }
+}
+```
+
+这表示 `composer create-project` 执行完毕后，自动对程序进行初始化（即 `./init` 命令）。
+
+由此可见，这种安装方法比传统的 git clone 安装法简单不少。
