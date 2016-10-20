@@ -17,7 +17,7 @@ mv composer.phar /usr/local/bin/composer
 ## Install The Composer Asset Plugin
 
 ```bash
-composer global require "fxp/composer-asset-plugin:~1.0"
+composer global require "fxp/composer-asset-plugin:dev-master"
 ```
 
 这是一个 composer 插件，作用是可以通过 Composer 管理 npm package. npm 是 JavaScript 下的 package manager. 由于是全局安装（`global` option），此命令仅需在首次下载 Composer 后执行一次。
