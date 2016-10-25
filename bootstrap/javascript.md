@@ -135,9 +135,28 @@ Name | Type | Default | Desc.
 -----|------|---------|------
 content | string | '' |
 title | string | '' |
-trigger | string | 'click' | 其它值：`hover`, `focus` (在 `<input>` 元素上 popover 会用到)
+trigger | string | 'click' | 其它值：`hover`, `focus`
 html | boolen | false | popover 内容是否支持 HTML 内容
 placement | string | 'right' | 其它可选值：`auto`, `top`, `bottom`, `left`
+
+### `trigger` 各个值的应用场景
+
+- `hover`: 用在 form label 的提示信息上。
+- `focus`: 使用该值时，点击按钮 popover, 再 popover 以外的区域点击， popover 消失。
+  
+  默认情况下，在 `<span>` (如 Font awesome icons) 上声明此 trigger 无效，只能在 `<button>`, `<input>` 等元素上使用。原因：Bootstrap 自己的问题([Bootstrap's popover only working on buttons - not anchors or spans](http://stackoverflow.com/questions/25042697/bootstraps-popover-only-working-on-buttons-not-anchors-or-spans))。解决办法：在 `<span>` 内增加 `tabindex="0"` 即可，例如：
+  
+  ```php
+  echo Html::icon('flag', [
+      'tabindex' => 0, # key line
+      'data' => [
+          'toggle' => 'popover',
+          'html' => true,
+          'trigger' => 'focus',
+          'content' => Html::tag('h1', 'Hello'),
+      ],
+  ]);
+  ```
 
 ## Methods
 
