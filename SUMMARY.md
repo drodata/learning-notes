@@ -23,6 +23,8 @@
 * [PHP](php/README.md)
     * [FAQs](php/faqs.md)
     * [Funtions Cheat-sheet](php/functions-cheat-sheet.md)
+* [Vim](vim/README.md)
+    * [Compiling Vim](vim/compile.md)
 * [jQuery](jquery/README.md)
     * [Selectors](jquery/selector.md)
     * [Funtions Cheat-sheet](jquery/functions-cheat-sheet.md)
