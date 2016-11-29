@@ -34,38 +34,49 @@
 	   ```
 
 	   保存，退出。以后 `ts` 就能使用 `sudo` 了。
-3. 设置 ts .vimrc, .bashrc 文件
-3. 安装常用软件包（以下 packages 均使用 `sudo apt-get install <package-name>` 安装）
-	1. 安装 PHP, Apache php5, php5-curl, php5-gd. 安装 php5 时，package `apache2` 作为其依赖包也一并安装；
-	2. 测试。我需要把默认的 Document Root 指向 /home/ts/www/ 目录。
+
+## 3 设置 ts .vimrc, .bashrc 文件
+
+## 4 Installing PHP, MySQL and Apache
+
+```bash
+sudo apt-get update
+sudo apt-get install php5 mysql-server mysql-client php5-mysql php5-curl php5-gd
+```
+
+安装过程中需要有一个额外的交互——设置 MySQL 密码。
+
+### 4.1 配置 Packages
+
+- PHP: 更改 `error_reporting` directive, 不要报告 `E_NOTICE` 错误；
+- Apache: 记得启用 `Rewrite` engine: `sudo a2enmod rewrite`. 如果站点使用 HTTPS 安全连接，还需启用 `ssl` mod.
+
+## 5 测试 Apache
+
+我需要把默认的 Document Root 指向 /home/ts/www/ 目录。
 	   
-	   ```bash
-	   vi /etc/apache2/sites-aviable/000-default
-	   # 将 DocumentRoot 的值由 /var/www 改成 /home/ts/www, 保存并退出
-	   # 重启 Apache
-	   sudo /etc/init.d/apache restart
-	   # 在 /home/ts/www/ 下新建 index.php, 里面调用 phpinfo()
-	   ```
+```bash
+vi /etc/apache2/sites-aviable/000-default
+# 将 DocumentRoot 的值由 /var/www 改成 /home/ts/www, 保存并退出
+# 重启 Apache
+sudo /etc/init.d/apache restart
+# 在 /home/ts/www/ 下新建 index.php, 里面调用 phpinfo()
+```
 
-	   这时访问 ip, 提示 403 错误，查找后发现，还需要再修改一处：
+这时访问 ip, 提示 403 错误，查找后发现，还需要再修改一处：
 
-	   ```bash
-	   vi /etc/apache/apache2.conf
-	   ```
+```bash
+vi /etc/apache/apache2.conf
+```
 
-	   找到：
+找到：
 
-	   ```bash
-	   <Directory /var/www/>
-	   		Options Indexes FollowSymLinks
-			AllowOverride None
-			Require all granted
-	   </Directory>
-	   ```
+```bash
+<Directory /var/www/>
+		Options Indexes FollowSymLinks
+ 	AllowOverride None
+ 	Require all granted
+</Directory>
+```
 
-	   将 `/var/www/` 替换为 `/home/ts/www/`. 再次重启 Apache, 这次访问首页，成功出现 phpinfo 内容.
-	3. 安装 MySQL 
-	   
-	   ```bash
-	   sudo apt-get install mysql-server mysql-client php5-mysql
-	   ```
+将 `/var/www/` 替换为 `/home/ts/www/`. 再次重启 Apache, 这次访问首页，成功出现 phpinfo 内容.
