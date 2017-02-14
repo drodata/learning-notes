@@ -64,7 +64,17 @@ SSLCertificateKeyFile       /etc/letsencrypt/live/xxx/privkey.pem
 
 这是因为站点内含有 http 请求的资源（图片、js 文件等）。https 连接内不允许有 http 请求。解决方式就是把这些 http 请求全部替换成 https 请求。
 
-## 五、参考链接
+## 五、更新证书
+
+Let's Encrypt 免费证书的有效期是 90 天，所以应在证书到期前更新。更新分为手动和自动两种。
+
+### 5.1 手动更新证书
+
+```bash
+./path/to/certbot-auto renew
+```
+
+## 六、参考链接
 
 - https://www.digitalocean.com/community/tutorials/how-to-create-a-ssl-certificate-on-apache-for-ubuntu-14-04 仅借助 certbot 生成 certificate 文件，通过直接配置 Apache 实现
 - Apache 日志出现 "Apache: “AuthType not set!” 500 Error" 的解决办法：http://stackoverflow.com/questions/21265191/apache-authtype-not-set-500-error
