@@ -12,6 +12,7 @@
 * [git && GitHub](git/README.md)
     * [Commands Cheat-sheet](git/command-cheatsheet.md)
 * [Yii](yii/README.md)
+    * [Practical Yii](yii/practical.md)
     * [FAQs](yii/faqs.md)
     * [ActiveRecord](yii/activerecord.md)
     * [Validators](yii/validator.md)
