@@ -1,5 +1,11 @@
 # 安装 Certbot 让站点支持 HTTPS 连接
 
+## 一 安装 Certbot
+
+官方的[安装教程](https://certbot.eff.org/#debianjessie-apache)写得很详细。
+
+## 二 安装证书
+
 ```bash
 ./path/to/certbot-auto --apache certonly
 ```
@@ -19,11 +25,31 @@
 
 生成后认证文件存放在 `/etc/letsencrypt/live` 目录内。
 
-> 如何向现有证书中追加一个域名
-> 
-> 假设你的应用在最开始时只有前端和后端两层，域名分别为 `backend.example.com` 和 `frontend.example.com`, 根据上面的命令生成的证书仅包含这两个域名。
-> 
-> 现在，你的应用增加了移动端 `m.example.com`, 你想让移动端也支持 HTTPS 连接。这时就要**重新安装证书**。重新安装很简单，就是把上面的命令追加 `-d m.example.com` 后再执行一次。主要特别注意的是，证书更新完后一定要重启 Apache, 新证书才会生效。
+### 2.1 如何向现有证书中追加一个域名
+
+假设你的应用在最开始时只有前端和后端两层，域名分别为 `backend.example.com` 和 `frontend.example.com`, 根据上面的命令生成的证书仅包含这两个域名。
+
+现在，你的应用增加了移动端 `m.example.com`, 你想让移动端也支持 HTTPS 连接。这时就要**重新安装证书**。重新安装很简单，就是把上面的命令追加 `-d m.example.com` 后再执行一次。主要特别注意的是，证书更新完后一定要重启 Apache, 新证书才会生效。
+
+### 2.2 FAQ 多个域名必须属于同一域名下的子域名吗
+
+下面的安装方法可行吗
+
+```bash
+./path/to/certbot --apache certonly -d www.abc.com -d www.example.com
+```
+
+答：可以。
+
+### 2.3 一个证书最多能包含多少个域名？
+
+在官方的 [Rate Limits](https://letsencrypt.org/docs/rate-limits/)中提到：
+
+> The main limit is _**Certificates per Registered Domain**_ (20 per week). A registered domain is, generally speaking, the part of the domain you purchased from your domain name registrar.
+
+> If you have a lot of subdomains, you may want to combine them into a single certificate, **up to a limit of 100 Names per Certificate**. Combined with the above limit, that means you can issue certificates containing up to 2,000 unique subdomains per week.
+
+也就是说，每个独立域名每周可申请 20 个证书，每个证书内可绑定 100 个子域名。
 
 ## 三、配置 Apache 以支持 SSL
 
