@@ -40,7 +40,7 @@ ServerAlias m.hello.com
 
 ### 2 向证书中追加 m.hello.com 域名
 
-具体参见 [Certbot](debian/certbot-https.md) 中的笔记。
+具体参见 [Certbot](/debian/certbot-https.md) 中的笔记。
 
 ### 3 配置 Default Route
 
@@ -50,8 +50,6 @@ ServerAlias m.hello.com
 
 找到店铺 ID 后，一切就都好办了。
 
-
------------------------------------------------------
 
 ## 借助 SwiftMail 和 QQ 域名邮箱发送验证邮件
 
