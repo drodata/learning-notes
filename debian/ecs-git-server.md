@@ -64,7 +64,7 @@ touch post-receive && chmod +x post-receive
 编辑上面新建的文件`post-receive`,添加如下内容：
 
 ```bash
-!/bin/sh
+#!/bin/sh
 cd .. 
 env -i git reset --hard
 ```
