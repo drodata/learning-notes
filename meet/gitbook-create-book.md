@@ -12,6 +12,8 @@
 
 ## Linking `.md` files in pages
 
-`SUMMARY.md` 内的提纲其实就是链接。gitbook 会自动将 md 文件转换成对应的 HTML 页面。注意，markdown 文件是相对路径（`meet/composer/download.md`）, 这是因为 `SUMMARY.md` 在根目录下。如果在其它页面内设置链接时，就要使用绝对路径了（前面加上 `/` 即可：`/meet/composer/download.md`）。范例：[Composer 的安装方法](/meet/composer/download.md).
+`SUMMARY.md` 内的提纲其实就是链接。gitbook 会自动将 md 文件转换成对应的 HTML 页面。注意，自动生成的 markdown 文件链接是相对路径（`meet/composer/download.md`）, 这是因为 `SUMMARY.md` 在根目录下。如果在其它页面内设置链接时，就要使用绝对路径了（前面加上 `/` 即可：`/meet/composer/download.md`）。范例：[Composer 的安装方法](/meet/composer/download.md).
 
-注意：要想让链接在 Gitbook 发布页面上正常显示，该 .md 文件**必须出现在 `SUMMARY.md` 文件内** (git book 会将 `SUMMARY.md` 内列出的所有 md 文件都转换成 HTML 页面). 
+> :warning:
+>
+> 要想让链接在 Gitbook 发布页面上正常显示，该 .md 文件**必须出现在 `SUMMARY.md` 文件内** (git book 会将 `SUMMARY.md` 内列出的所有 md 文件都转换成 HTML 页面). 
