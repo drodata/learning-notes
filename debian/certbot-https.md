@@ -31,6 +31,31 @@
 
 现在，你的应用增加了移动端 `m.example.com`, 你想让移动端也支持 HTTPS 连接。这时就要**重新安装证书**。重新安装很简单，就是把上面的命令追加 `-d m.example.com` 后再执行一次。主要特别注意的是，证书更新完后一定要重启 Apache, 新证书才会生效。
 
+更省事的办法是将上面的操作放在一个 shell script 内，需要变更域名时，执行一次脚本即可。下面是一个例子：
+
+```bash
+#!/bin/bash
+
+# File name: update-certificate.sh
+certbot --apache certonly -d front.abc.com -d backend.abc.com -d m.abc.com -d m.example.com
+
+service apache2 restart
+echo 'Certificate was updated.'
+```
+
+执行命令：
+
+```bash
+# switch to root user
+sudo -i
+# make executable
+chmod +x update-certificate.sh
+
+# execute
+./update-certificate.sh
+```
+
+
 ### 2.2 FAQ 多个域名必须属于同一域名下的子域名吗
 
 下面的安装方法可行吗
