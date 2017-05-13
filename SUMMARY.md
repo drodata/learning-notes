@@ -25,6 +25,7 @@
 * [PHP](php/README.md)
     * [FAQs](php/faqs.md)
     * [The PayPal SDK](php/paypal.md)
+    * [创建循环付款的流程](php/paypal-create-billing-agreement.md)
     * [Funtions Cheat-sheet](php/functions-cheat-sheet.md)
 * [Vim](vim/README.md)
     * [Compiling Vim](vim/compile.md)
