@@ -25,13 +25,15 @@
 
 生成后认证文件存放在 `/etc/letsencrypt/live` 目录内。
 
-### 2.1 如何向现有证书中追加一个域名
+### 2.1 如何向现有证书中追加/删除一个域名
 
 假设你的应用在最开始时只有前端和后端两层，域名分别为 `backend.example.com` 和 `frontend.example.com`, 根据上面的命令生成的证书仅包含这两个域名。
 
 现在，你的应用增加了移动端 `m.example.com`, 你想让移动端也支持 HTTPS 连接。这时就要**重新安装证书**。重新安装很简单，就是把上面的命令追加 `-d m.example.com` 后再执行一次。主要特别注意的是，证书更新完后一定要重启 Apache, 新证书才会生效。
 
-更省事的办法是将上面的操作放在一个 shell script 内，需要变更域名时，执行一次脚本即可。下面是一个例子：
+更省事的办法是将上面的操作放在一个 shell script 内，需要变更域名时，对脚本文件稍作调整后并执行即可。下面是一个脚本文件的实例。
+
+新建一个脚本文件内容如下：
 
 ```bash
 #!/bin/bash
@@ -43,7 +45,7 @@ service apache2 restart
 echo 'Certificate was updated.'
 ```
 
-执行命令：
+依次执行命令：
 
 ```bash
 # switch to root user
