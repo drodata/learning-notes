@@ -9,7 +9,8 @@
 为了在任何地方都能执行该命令，我们执行 
 
 ```bash
-mv composer.phar /usr/local/bin/composer
+sudo mv composer.phar /usr/local/bin/composer
+chmod +x /usr/local/bin/composer
 ```
 
 之后，即可直接使用 `composer` 命令了。
