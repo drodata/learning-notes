@@ -2,6 +2,7 @@
 
 * [前言](README.md)
 * [Debian](debian/README.md)
+    * [安装-作为桌面应用](debian/install-as-desktop.md)
     * [常用命令](debian/command-cheatsheet.md)
     * [Package List](debian/package-list.md)
     * [安装 Certbot 让站点支持 HTTPS 连接](debian/certbot-https.md)
@@ -24,6 +25,7 @@
     * [Packagist](yii/packagist.md)
     * [Essays](yii/essays/README.md)
         * [Declaring Relations via a Junction Table](yii/essays/declaring-relations-via-a-junction-table.md)
+        * [Bower asset 路径错误导致无法 publish](yii/essays/bower-asset-failed-to-publish.md)
 * [PHP](php/README.md)
     * [FAQs](php/faqs.md)
     * [The PayPal SDK](php/paypal.md)
