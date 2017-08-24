@@ -31,6 +31,7 @@
     * [The PayPal SDK](php/paypal.md)
     * [创建循环付款的流程](php/paypal-create-billing-agreement.md)
     * [Funtions Cheat-sheet](php/functions-cheat-sheet.md)
+    * [理解引用(Reference)](php/reference.md)
 * [Vim](vim/README.md)
     * [Compiling Vim](vim/compile.md)
 * [jQuery](jquery/README.md)
