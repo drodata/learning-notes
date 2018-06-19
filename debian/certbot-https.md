@@ -16,6 +16,12 @@
 > sudo certbot --apache certonly
 > ```
 
+> ## 安装时报错
+> 
+> Client with the currently selected authenticator does not support any combination of challenges that will satisfy the CA
+>
+> 原因：certbot 版本太低。需要使用 https://certbot.eff.org/docs/install.html#certbot-auto 中介绍的办法下载最新版本的脚本来安装
+
 
 上面的 `certonly` 表示只生成认证文件，而不生成 Apache2 相应的配置文件。对 Yii2 应用来说，因为有多个端，我们需要一个证书内包含多个子域名，这时后面跟着若干个 `-d <domain name>` 即可，例如：
 
@@ -116,6 +122,19 @@ SSLCertificateKeyFile       /etc/letsencrypt/live/xxx/privkey.pem
 ### 4.1 https 站点中绿色小锁图标消失的问题
 
 这是因为站点内含有 http 请求的资源（图片、js 文件等）。https 连接内不允许有 http 请求。解决方式就是把这些 http 请求全部替换成 https 请求。
+
+### 4.2 浏览器访问提示 "This site can’t be reached"
+
+有时还提示：
+
+> "This site can’t provide a secure connection"
+
+原因排查
+
+证书没问题，多是 Apache 配置出现问题，确认如下几项内容后重试：
+
+- ssl module 是否已启用
+- Apache 默认的 default-ssl.conf 是否通过 a2ensite 显性启用
 
 ## 五、更新证书
 
