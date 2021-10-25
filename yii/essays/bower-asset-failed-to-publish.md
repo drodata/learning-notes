@@ -4,7 +4,9 @@
 
 > Exception 'yii\base\InvalidParamException' with message '**The file or directory to be published does not exist: `/path/to/my-project/vendor/bower/jquery/dist'`**
 
-`/path/to/my-project/` 是项目的根目录，会因人而异。查看 `vendor` 目录，发现的确没有 `bower` 目录，有一个 `bower-asset` 目录。以前的解决办法是手动将 `bower-asset` 重命名为 `bower`. 这种办法显然没有找到根源，这一次恰巧又碰到，索性尝试彻底解决。
+`/path/to/my-project/` 是项目的根目录，会因人而异。查看 `vendor` 目录，发现的确没有 `bower` 目录，有一个 `bower-asset` 目录。以前的解决办法是手动将 `bower-asset` 重命名为 `bower`.[参见 YAT 内的做法][override-bower-alias]
+
+这种办法显然没有找到根源，这一次恰巧又碰到，索性尝试彻底解决。
 
 首先这个异常是在如下位置抛出的：
 
@@ -98,3 +100,4 @@ public function publish($path, $options = [])
 [fxp-composer-asset-plugin]: https://github.com/fxpio/composer-asset-plugin
 [define-a-custom-directory-for-the-assets-installation]: https://github.com/fxpio/composer-asset-plugin/blob/master/Resources/doc/index.md#define-a-custom-directory-for-the-assets-installation
 [v1.3.0]: https://github.com/fxpio/composer-asset-plugin/releases/tag/v1.3.0
+[override-bower-alias]: https://github.com/drodata/yii2-app-template/blob/c91b100cc2563125378d97bd7f6455079fbd7178/backend/config/main.php#L50-L54
