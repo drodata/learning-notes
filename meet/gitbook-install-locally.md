@@ -15,4 +15,20 @@ $ sudo npm install gitbook-cli -g
 
 命令行使用说明参考 `gitbook help`.
 
+```
+ts@TS:~/www/learning-notes$ sudo npm install gitbook-cli -g
+
+changed 46 packages, and audited 579 packages in 4s
+
+45 vulnerabilities (2 low, 21 moderate, 14 high, 8 critical)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+```
+
 [gitbook-cli]: https://www.npmjs.com/package/gitbook-cli

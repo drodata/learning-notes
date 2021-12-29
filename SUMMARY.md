@@ -1,6 +1,8 @@
 # Summary
 
 * [前言](README.md)
+* [Windows](windows/README.md)
+    * [Windows 7](windows/win7.md)
 * [Debian](debian/README.md)
     * [安装-作为桌面应用](debian/install-as-desktop.md)
     * [常用命令](debian/command-cheatsheet.md)

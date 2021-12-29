@@ -7,27 +7,20 @@ npm 是 Node Package Manager 的简称。它是一个 Javascript 包管理器，
 参考[官方的安装说明][install-instruction]下载最新版。
 
 ```bash
-# 就是一个 shell script
-wget https://deb.nodesource.com/setup_8.x
+# Using Debian, as root
+# curl -fsSL https://deb.nodesource.com/setup_17.x | bash -
 
-# 赋予可执行权限
-chmod +w setup_8.x
-
-# 以 root 身份运行 script
-sudo ./setup_8.x
-
-# 安装
-apt-get install nodejs
+$ sudo apt-get install -y nodejs
 ```
 
 检查版本：
 
 ```bash
-$ nodejs -v
-v8.2.1
+$ node -v
+v17.3.0
 
 $ npm -v
-5.3.0
+8.3.0
 ```
 
 ## Installing on Mac
