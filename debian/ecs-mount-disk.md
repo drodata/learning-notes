@@ -216,7 +216,7 @@ tmpfs                                                   101M     0  101M   0% /r
 
 > mkdir(): No space left on device
 
-### 思路一 扩容现有数据盘【未采用】
+### 思路一 扩容现有数据盘【已实践】
 
 首先想到的是把现有数据盘进行扩容。控制台倒是有一个“扩容”操作，但该操作仅扩大磁盘容量，文件系统的容量并未改变。拿自己的数据盘为例，初始容量是 20G, 扩容后，磁盘容量是 40G, 但是文件系统容量仍是 20G, 也就是说，照样存不进去内容。只有同时把文件系统也扩展到 40G 才行。但是扩展文件系统意味着必须格式化原内容，这样数据丢失风险太大。简单用了一下快照也不行，只能使用最笨的办法：使用 FTP 把数据盘备份到本地，然后格式化数据盘，使得文件系统也得到扩容，最后再把本地的数据上传到扩容后的数据盘上。这么做太耗时，线上应用根本等不及。
 
@@ -241,6 +241,69 @@ public function getMediaRoot()
 ```
 
 将来如果 `static` 磁盘也用尽，我们可以使用类似的办法再增加数据盘。
+
+### Update 2023-03-11 扩容现有云盘
+
+之前新购的 40G 云盘已用完，再次面临扩容问题。查看相关文档后，决定尝试上面的思路一实现。以数据盘为例，扩容主要分为三个步骤：
+
+1. 扩容云盘；
+2. 扩容分区；
+3. 扩容文件系统；
+
+上一次只进行了步骤一，后两个步骤因为怕麻烦没有实践。这次实践后发现还是思路一更好。
+
+#### Step 1: 创建快照备份
+
+以防万一。快照只需要保留一天。扩容成功后自动删除即可。
+
+#### Step 2: 扩容云盘
+
+在控制台上找到数据盘，点击扩容即可。每次扩容 20G 足矣。
+
+#### Step 3: 扩容分区
+要扩容的云盘概况：
+
+```
+Disk /dev/vdc: 60 GiB, 64424509440 bytes, 125829120 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0x08966605
+
+Device     Boot Start      End  Sectors Size Id Type
+/dev/vdc1        2048 83886079 83884032  40G 83 Linux
+
+```
+
+首先安装**growpart** 包:
+
+```
+sudo apt-get update
+sudo apt-get install cloud-guest-utils
+```
+
+其次执行分区扩容命令：`sudo LC_ALL=en_US.UTF-8 growpart /dev/vdc 1`. 注意使用 sudo 执行。
+
+```
+git@YALONGDIAMOND:~/www/eims$ LC_ALL=en_US.UTF-8 growpart /dev/vdc 1
+FAILED: sfdisk not found
+
+git@YALONGDIAMOND:~/www/eims$ sudo LC_ALL=en_US.UTF-8 growpart /dev/vdc 1
+CHANGED: partition=1 start=2048 old: size=83884032 end=83886080 new: size=125827039,end=125829087
+```
+
+最后，执行文件分区扩容命令(`ext*` 格式)
+
+```
+git@YALONGDIAMOND:~/www/eims$ sudo resize2fs /dev/vdc1
+resize2fs 1.43.4 (31-Jan-2017)
+Filesystem at /dev/vdc1 is mounted on /home/git/www/eims/static; on-line resizing required
+old_desc_blocks = 3, new_desc_blocks = 4
+The filesystem on /dev/vdc1 is now 15728379 (4k) blocks long.
+```
+
+大功告成。两次扩容实践一对比，高下立判。
 
 ## 参考:
 
