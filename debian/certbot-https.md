@@ -1,5 +1,18 @@
 # 安装 Certbot 让站点支持 HTTPS 连接
 
+Aliyun 免费数字证书
+---------------------------------------------------------------------------
+- 创建证书
+- 证书申请
+- 填写要绑定的域名，剩余让自动填写即可
+- 下载 Apache 文件, 解压下来三个文件 (已 `static` 子域名为例)
+    - `static.xxx.com_public.crt`
+    - `static.xxx.com_chain.crt`
+    - `static.xxx.com.key`
+- 借助 FTP 把三个文件上传到服务器临时目录（`/eims/file/ftp-tmp/`）, 再移动到 Apache 下专门存储证书的目录（例如 `/etc/apache2/cert`）
+- edit `sites/available/default-ssl.conf`
+- `sudo service apache2 restart` 重启 Apache
+
 ## 一 安装 Certbot
 
 官方的[安装教程](https://certbot.eff.org/#debianjessie-apache)写得很详细。
