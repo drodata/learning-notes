@@ -13,6 +13,29 @@ Aliyun 免费数字证书
 - edit `sites/available/default-ssl.conf`
 - `sudo service apache2 restart` 重启 Apache
 
+全局重定向 HTTP 链接至 HTTPS 链接
+---------------------------------------------------------------------------
+以 i.yalongdiamond.com 为例，演示配置过程。HTTP 配置文件内容如下：
+
+```
+# in /etc/apache2/sites-available/yalong.conf
+
+<VirtualHost *:80>
+    ServerName i.yalong.com
+    DocumentRoot "/home/ts/www/eims/backend/web"
+    <Directory "/home/ts/www/eims/backend/web">
+           # ...other settings...
+    </Directory>
+</VirtualHost>
+```
+
+增加如下一行：
+```
+    Redirect permanent / https://i.yalong.com/
+```
+
+重启 Apache 即可。
+
 ## 一 安装 Certbot
 
 官方的[安装教程](https://certbot.eff.org/#debianjessie-apache)写得很详细。
