@@ -5,6 +5,7 @@
     * [Windows 7](windows/win7.md)
 * [Debian](debian/README.md)
     * [FAQ](debian/faq.md)
+    * [升级记录](debian/upgrade.md)
     * [安装-作为桌面应用](debian/install-as-desktop.md)
     * [常用命令](debian/command-cheatsheet.md)
     * [Package List](debian/package-list.md)
