@@ -32,13 +32,19 @@ sudo apt full-upgrade
 
 ### Reboot and Verify
 
+Reboot:
+
 ```
 sudo reboot
+```
 
+Verify:
+
+```
 uname -mrs 
 Linux 6.1.0-13-amd64 x86_64
 
-ts@TS:$ **lsb_release -a**
+lsb_release -a
 No LSB modules are available.
 Distributor ID:	Debian
 Description:	Debian GNU/Linux 12 (bookworm)
