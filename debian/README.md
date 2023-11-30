@@ -7,7 +7,7 @@
 * [Package List](/debian/package-list.md)
 * [安装 Certbot 让站点支持 HTTPS 连接](/debian/certbot-https.md)
 * FAQ & HOW-TO
-    * [如何安装其它版本的 PHP?](install-other-php-version.md)
+    * [如何安装其它版本的 PHP?](howto/install-other-php-version.md)
     * [服务器返回的时间戳不准确的问题](/debian/howto-correct-unix-timestamp-using-utp.md)
 * [ECS](/debian/ecs.md)
     * [ECS Initialization](/debian/ecs-init.md)

@@ -62,3 +62,7 @@ $ sudo systemctl restart apache2
 
 1. 使用 `php -v` 显示的必须是自己要用的版本. 这里曾有个误解，以为只要 Apache 内部 PHP 模块替换就够了，Cli 不用管。这种想法是错误的；
 2. Apache 内 PHP 模块启用；
+
+- 参考：[How To Install PHP (8.2, 8.1 or 7.4) on Debian 12][ref]
+
+[ref]: https://tecadmin.net/how-to-install-php-on-debian-12/
