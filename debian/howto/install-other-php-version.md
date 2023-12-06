@@ -25,10 +25,13 @@ echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | sudo tee /et
 
 ```
 sudo apt update
-sudo apt install php7.1 php7.1-mysql
+sudo apt install php7.1 php7.1-mysql php7.1-gd
 ```
 
 通过更新，就能找到旧版本的 PHP. 第二行安装我们需要的两个包。
+
+- `php7.1-mysql`: 确保数据库正常；
+- `php7.1-gd`: 确保处理图片功能正常；
 
 ### Step 3: 将目标版本的 PHP 设为默认
 安装完使用 `php -v` 显示的版本仍然是 8.2, 但是 `/usr/bin/` 内已经有了 PHP7.1. 下面我们把默认 php 版本设置成 7.1
