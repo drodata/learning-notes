@@ -25,7 +25,7 @@ echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | sudo tee /et
 
 ```
 sudo apt update
-sudo apt install php7.1 php7.1-mysql php7.1-gd php7.1-mbstring php7.1-xml
+sudo apt install php7.1 php7.1-mysql php7.1-gd php7.1-mbstring php7.1-xml php7.1-curl
 ```
 
 通过更新，就能找到旧版本的 PHP. 第二行安装我们需要的两个包。
@@ -34,6 +34,9 @@ sudo apt install php7.1 php7.1-mysql php7.1-gd php7.1-mbstring php7.1-xml
 - `php7.1-gd`: 确保处理图片功能正常；
 - `php7.1-mbstring`: Yii2 框架需要；
 - `php7.1-xml`: EasyWechat 需要
+- `php7.1-curl`: 可以让 Composer 速度更快, 否则使用 Composer 时将出现下面提示:
+    
+    > Composer is operating significantly slower than normal because you do not have the PHP curl extension enabled.
 
 ### Step 3: 将目标版本的 PHP 设为默认
 安装完使用 `php -v` 显示的版本仍然是 8.2, 但是 `/usr/bin/` 内已经有了 PHP7.1. 下面我们把默认 php 版本设置成 7.1

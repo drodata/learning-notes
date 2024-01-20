@@ -2,7 +2,6 @@
 
 * [前言](README.md)
 * [Windows](windows/README.md)
-    * [Windows 7](windows/win7.md)
 * [Debian](debian/README.md)
 * [git && GitHub](git/README.md)
     * [Commands Cheat-sheet](git/command-cheatsheet.md)
