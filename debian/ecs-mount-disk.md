@@ -242,6 +242,24 @@ public function getMediaRoot()
 
 将来如果 `static` 磁盘也用尽，我们可以使用类似的办法再增加数据盘。
 
+### Update 2024-03-22 第二次扩容
+
+执行 `growpart` 先后两次的变化：
+
+```
+CHANGED: partition=1 start=2048 old: size=83884032 end=83886080 new: size=125827039,end=125829087
+CHANGED: partition=1 start=2048 old: size=125827039 end=125829087 new: size=188741599,end=188743647
+```
+
+执行 `resize2fs` 前后的变化：
+
+```
+old_desc_blocks = 3, new_desc_blocks = 4
+The filesystem on /dev/vdc1 is now 15728379 (4k) blocks long
+old_desc_blocks = 4, new_desc_blocks = 6
+The filesystem on /dev/vdc1 is now 23592699 (4k) blocks long.
+```
+
 ### Update 2023-03-11 扩容现有云盘
 
 之前新购的 40G 云盘已用完，再次面临扩容问题。查看相关文档后，决定尝试上面的思路一实现。以数据盘为例，扩容主要分为三个步骤：
@@ -254,7 +272,7 @@ public function getMediaRoot()
 
 #### Step 1: 创建快照备份
 
-以防万一。快照只需要保留一天。扩容成功后自动删除即可。
+以防万一,创建一个只保留一天的快照。快照创建后还有一个短暂的上传时间。需要稍等一下才能进行第二步。
 
 #### Step 2: 扩容云盘
 
@@ -283,9 +301,10 @@ sudo apt-get update
 sudo apt-get install cloud-guest-utils
 ```
 
-其次执行分区扩容命令：`sudo LC_ALL=en_US.UTF-8 growpart /dev/vdc 1`. 注意使用 sudo 执行。
+> `sudo LC_ALL=en_US.UTF-8 growpart /dev/vdc 1`. 
 
 ```
+# 注意需使用 sudo 执行。
 git@YALONGDIAMOND:~/www/eims$ LC_ALL=en_US.UTF-8 growpart /dev/vdc 1
 FAILED: sfdisk not found
 
@@ -294,6 +313,8 @@ CHANGED: partition=1 start=2048 old: size=83884032 end=83886080 new: size=125827
 ```
 
 最后，执行文件分区扩容命令(`ext*` 格式)
+
+> `sudo resize2fs /dev/vdc1`
 
 ```
 git@YALONGDIAMOND:~/www/eims$ sudo resize2fs /dev/vdc1
