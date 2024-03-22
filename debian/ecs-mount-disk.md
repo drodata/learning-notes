@@ -279,22 +279,25 @@ The filesystem on /dev/vdc1 is now 23592699 (4k) blocks long.
 在控制台上找到数据盘，点击扩容即可。每次扩容 20G 足矣。
 
 #### Step 3: 扩容分区
-要扩容的云盘概况：
+
+首先，通过 `sudo fdisk -lu /dev/vdb` 查看要扩容的云盘概况：
 
 ```
-Disk /dev/vdc: 60 GiB, 64424509440 bytes, 125829120 sectors
+git@YALONGDIAMOND:~$ sudo fdisk -lu /dev/vdc
+Disk /dev/vdc: 90 GiB, 96636764160 bytes, 188743680 sectors
 Units: sectors of 1 * 512 = 512 bytes
 Sector size (logical/physical): 512 bytes / 512 bytes
 I/O size (minimum/optimal): 512 bytes / 512 bytes
 Disklabel type: dos
 Disk identifier: 0x08966605
 
-Device     Boot Start      End  Sectors Size Id Type
-/dev/vdc1        2048 83886079 83884032  40G 83 Linux
+Device     Boot Start       End   Sectors Size Id Type
+/dev/vdc1        2048 188743646 188741599  90G 83 Linux
+# 上一行最后侧的 'Linux' 表明数据盘使用的是MBR分区表格式
 
 ```
 
-首先安装**growpart** 包:
+2 安装**growpart** 包:
 
 ```
 sudo apt-get update
