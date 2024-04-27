@@ -5,6 +5,7 @@
 * [安装-作为桌面应用](/debian/install-as-desktop.md)
 * [常用命令](/debian/command-cheatsheet.md)
 * [Package List](/debian/package-list.md)
+* [SSL 证书](/debian/ssl.md)
 * [安装 Certbot 让站点支持 HTTPS 连接](/debian/certbot-https.md)
 * FAQ & HOW-TO
     * [如何安装其它版本的 PHP?](howto/install-other-php-version.md)
