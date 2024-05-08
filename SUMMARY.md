@@ -3,6 +3,7 @@
 * [前言](README.md)
 * [Windows](windows/README.md)
 * [Debian](debian/README.md)
+* [Inkscape](inkscape/README.md)
 * [git && GitHub](git/README.md)
     * [Commands Cheat-sheet](git/command-cheatsheet.md)
 * [Yii](yii/README.md)
