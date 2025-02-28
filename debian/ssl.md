@@ -3,18 +3,18 @@
 Aliyun 免费数字证书
 ---------------------------------------------------------------------------
 
-> 阿里云免费证书突然由 20 个降至 5 个，已无法申请。改在腾讯云下
+> 阿里云免费证书可申请 20 个，单个证书有效期 90 天
 
 - 创建证书
 - 证书申请
-- 填写要绑定的域名，剩余让自动填写即可
+- 填写要绑定的域名(例如 www.x.com)，剩余让自动填写即可
 - 下载 Apache 文件, 解压下来三个文件 (已 `static` 子域名为例)
     - `static.xxx.com_public.crt`
     - `static.xxx.com_chain.crt`
     - `static.xxx.com.key`
 - 借助 FTP 把三个文件上传到服务器临时目录（`/eims/file/ftp-tmp/`）, 再移动到 Apache 下专门存储证书的目录（例如 `/etc/apache2/cert`）
-- edit `sites/available/default-ssl.conf`
-- `sudo service apache2 restart` 重启 Apache
+- `/etc/apache2/sites-available/default-ssl.conf` 内声明证书位置；
+- `sudo systemctl reload apache2.service` 重启 Apache
 
 腾讯云免费数字证书
 ---------------------------------------------------------------------------
@@ -52,3 +52,7 @@ Aliyun 免费数字证书
 ```
 
 重启 Apache 即可。
+
+变更
+--------------------------------------------------------------------------
+- 2024-12-30 阿里云将免费证书有效期缩短为 90 天
