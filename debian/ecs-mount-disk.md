@@ -242,25 +242,42 @@ public function getMediaRoot()
 
 将来如果 `static` 磁盘也用尽，我们可以使用类似的办法再增加数据盘。
 
-### Update 2024-03-22 第二次扩容
+### 后续扩容日志
 
-执行 `growpart` 先后两次的变化：
+- 2025-05-07 第三次扩容：由 90 G 增至 110G;
+- 2024-03-22 第二次扩容：由 70 G 增至 90G;
 
-```
+每次执行 `growpart` 后的输出内容：
+
+```bash
+# 第一次
 CHANGED: partition=1 start=2048 old: size=83884032 end=83886080 new: size=125827039,end=125829087
+# 第二次
 CHANGED: partition=1 start=2048 old: size=125827039 end=125829087 new: size=188741599,end=188743647
+# 第三次
+CHANGED: partition=1 start=2048 old: size=188741599 end=188743647 new: size=230684639,end=230686687
 ```
 
-执行 `resize2fs` 前后的变化：
+每次执行 `resize2fs` 后的输出内容:
 
-```
+```bash
+# 第一次
 old_desc_blocks = 3, new_desc_blocks = 4
 The filesystem on /dev/vdc1 is now 15728379 (4k) blocks long
+
+# 第二次
 old_desc_blocks = 4, new_desc_blocks = 6
 The filesystem on /dev/vdc1 is now 23592699 (4k) blocks long.
+
+# 第三次
+git@YALONGDIAMOND:~$ sudo resize2fs /dev/vdc1
+resize2fs 1.43.4 (31-Jan-2017)
+Filesystem at /dev/vdc1 is mounted on /home/git/www/eims/static; on-line resizing required
+old_desc_blocks = 6, new_desc_blocks = 7
+The filesystem on /dev/vdc1 is now 28835579 (4k) blocks long.
 ```
 
-### Update 2023-03-11 扩容现有云盘
+### Update 2023-03-11 首次扩容现有云盘
 
 之前新购的 40G 云盘已用完，再次面临扩容问题。查看相关文档后，决定尝试上面的思路一实现。以数据盘为例，扩容主要分为三个步骤：
 
@@ -280,7 +297,7 @@ The filesystem on /dev/vdc1 is now 23592699 (4k) blocks long.
 
 #### Step 3: 扩容分区
 
-首先，通过 `sudo fdisk -lu /dev/vdb` 查看要扩容的云盘概况：
+首先，通过 `sudo fdisk -lu /dev/vdc` 查看要扩容的云盘概况：
 
 ```
 git@YALONGDIAMOND:~$ sudo fdisk -lu /dev/vdc
@@ -327,7 +344,7 @@ old_desc_blocks = 3, new_desc_blocks = 4
 The filesystem on /dev/vdc1 is now 15728379 (4k) blocks long.
 ```
 
-大功告成。两次扩容实践一对比，高下立判。
+大功告成。通过 `df -h` 即可看到扩容容量已发生改变。两次扩容实践一对比，高下立判。
 
 ## 参考:
 
