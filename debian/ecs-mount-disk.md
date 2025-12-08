@@ -244,6 +244,7 @@ public function getMediaRoot()
 
 ### 后续扩容日志
 
+- 2025-12-08 第四次扩容：由 110 G 增至 130G;
 - 2025-05-07 第三次扩容：由 90 G 增至 110G;
 - 2024-03-22 第二次扩容：由 70 G 增至 90G;
 
@@ -256,6 +257,8 @@ CHANGED: partition=1 start=2048 old: size=83884032 end=83886080 new: size=125827
 CHANGED: partition=1 start=2048 old: size=125827039 end=125829087 new: size=188741599,end=188743647
 # 第三次
 CHANGED: partition=1 start=2048 old: size=188741599 end=188743647 new: size=230684639,end=230686687
+# 第四次
+CHANGED: partition=1 start=2048 old: size=230684639 end=230686687 new: size=272627679,end=272629727
 ```
 
 每次执行 `resize2fs` 后的输出内容:
@@ -275,7 +278,23 @@ resize2fs 1.43.4 (31-Jan-2017)
 Filesystem at /dev/vdc1 is mounted on /home/git/www/eims/static; on-line resizing required
 old_desc_blocks = 6, new_desc_blocks = 7
 The filesystem on /dev/vdc1 is now 28835579 (4k) blocks long.
+
+# 第四次
+git@YALONGDIAMOND:~/www/eims$ sudo resize2fs /dev/vdc1
+resize2fs 1.43.4 (31-Jan-2017)
+Filesystem at /dev/vdc1 is mounted on /home/git/www/eims/static; on-line resizing required
+old_desc_blocks = 7, new_desc_blocks = 9
+The filesystem on /dev/vdc1 is now 34078459 (4k) blocks long.
+
 ```
+
+### 2025-12-08 第四次扩容操作记录
+
+1. 登陆阿里云，创建快照，扩容20G;
+2. `sudo fdisk -lu /dev/vdc` 查看当前数据盘现状（当前显示110G）
+3. `sudo LC_ALL=en_US.UTF-8 growpart /dev/vdc 1` 
+4. `sudo resize2fs /dev/vdc1`
+5. 完工后检验: `sudo fdisk -lu /dev/vdc` (容量为 130G, 扩容20G成功)
 
 ### Update 2023-03-11 首次扩容现有云盘
 

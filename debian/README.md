@@ -1,6 +1,7 @@
 # Debian
 
 * [FAQ](/debian/faq.md)
+* [Fcitx 输入法](/debian/fcitx.md)
 * [升级记录](upgrade.md)
 * [安装-作为桌面应用](/debian/install-as-desktop.md)
 * [常用命令](/debian/command-cheatsheet.md)
